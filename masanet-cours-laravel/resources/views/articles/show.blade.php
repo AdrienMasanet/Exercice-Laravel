@@ -19,7 +19,7 @@
     <br>
 
     @if ($article->user)
-        <p class="text-center">Article rédigé par <a href="{{ url('author/' . $article->user->id) }}">{{ $article->user->name }}</a></p>
+        <p class="text-center">Article rédigé par <a href="{{ url('authors/' . $article->user->slug) }}">{{ $article->user->name }}</a></p>
     @else
         <p class="text-center">Article rédigé par un auteur anonyme</a></p>
     @endif

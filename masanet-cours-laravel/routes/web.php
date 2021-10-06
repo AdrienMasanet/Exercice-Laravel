@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\AuthorsController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,11 @@ Route::prefix('authors')->name('authors.')->group(function () {
     Route::get('/', [AuthorsController::class, 'index'])->name('index');
     Route::get('/{slugName}', [AuthorsController::class, 'show'])->name('show');
 });
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [AdminController::class, 'dashboard'])->name('index');
+    Route::get('/create-article', [AdminController::class, 'createArticle'])->name('create-article');
+    Route::post('/create-article', [AdminController::class, 'storeArticle'])->name('post-article');
+    Route::get('/list-articles', [AdminController::class, 'listArticles'])->name('list-article');
+});
+

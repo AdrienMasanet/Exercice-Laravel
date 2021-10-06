@@ -1,10 +1,10 @@
 <div class="container m-auto d-flex justify-content-start flex-wrap">
     @foreach ($articles as $article)
-        <div class="p-2" style="width: 25%;">
-            <div class="card" style="height: 200px;">
+        <div class="p-2 w-25 article-list-element">
+            <div class="card shadow-lg">
                 <a class="h-100" href="{{ url('articles/' . ($loop->index + 1)) }}">
-                    <p class="position-absolute p-3 text-light w-100 text-truncate" style="background: rgba(0,0,0,.5); text-shadow: 1px 1px 3px rgba(0,0,0,.5)">{{$article->title}}</p>
-                    <img class="card-img-top h-100" style="object-fit: cover; box-shadow: 1px 2px 5px rgba(0,0,0,.25);" src="{{ $article->image_url }}" alt="">
+                    <p class="position-absolute p-3 text-light w-100 text-truncate">{{ $article->title }}</p>
+                    <img class="card-img-top h-100 shadow-sm" style="object-fit: cover; border-radius: 15px;" src="{{ $article->image_url }}" alt="">
                 </a>
             </div>
         </div>
